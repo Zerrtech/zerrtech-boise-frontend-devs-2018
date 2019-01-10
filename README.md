@@ -134,6 +134,9 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
         );
       }
       ```
+      - Good articles on hooks:
+        - [Under the hood of React's hooks system](https://medium.com/the-guild/under-the-hood-of-reacts-hooks-system-eb59638c9dba)
+        - [Making Sense of React Hooks](https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889)
     - Concurrent Mode (~Q2 2019)
     - Suspense for Data Fetching (~mid 2019)
 
