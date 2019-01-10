@@ -258,10 +258,12 @@ This package.json tells TypeScript to check whether the current version of TypeS
 
 On a project we were working on this year, we were running into some big compile performance issues related to using React Material UI and interaction with TypeScript.  There were some changes to TypeScript that came out of this that improved performance.  Here is the [Issue](https://github.com/Microsoft/TypeScript/issues/25085) that explains it the best.
 
-## Javascript
+## Javascript & Browser Features
 ![Javascript logo](images/javascript_logo.png)
 
-### Features
+Sources:
+[Kaelan Cooter](https://blog.logrocket.com/a-comprehensive-look-back-at-frontend-in-2018-8122e724a802)
+### ECMAScript 2018
 - object rest/spread properties
   - Rest
   ```javascript
@@ -276,4 +278,43 @@ On a project we were working on this year, we were running into some big compile
   n; // { x: 1, y: 2, a: 3, b: 4 }
   ```
 - asynchronous iteration
+```javascript
+for await (const line of readLines(filePath)) {
+  console.log(line);
+}
+```
 - `Promise.finally`
+### Browser Features
+- OffscreenCanvasAPI
+  - Chrome and Firefox (with flag)
+  - Send canvas rendering to a web worker
+- Web Animations API
+  - Chrome, Firefox, and polyfill
+  - Similar to jQuery's `.animate()` but built into the browser
+  ```javascript
+  var options = {
+    iterations: Infinity,
+    iterationStart: 0,
+    delay: 0,
+    endDelay: 0,
+    direction: 'alternate',
+    duration: 700,
+    fill: 'forwards',
+    easing: 'ease-out',
+  }
+  var keyframes = [
+    { opacity: 0 },
+    { opacity: 1 }
+  ];
+
+  var element = document.querySelector('.animate-me');
+  element.animate(keyframes, options);
+  ```
+- WebAssembly adoption has been slow
+  - Binary instruction format with near-native performance. Use any language with a Web Assembly target
+  - A good option for data-heavy applications
+    - Image/video editing
+    - Video games
+    - VR
+    - Encryption
+  - C++, Rust, and Typescript are popular choices
