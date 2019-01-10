@@ -53,6 +53,7 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
 ## Framework Updates and New Features
 
 ### React
+![React logo](images/react_logo.png)
 
 - React v16
   - v16.0
@@ -84,7 +85,13 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
         - Authenticated users
         - Themes
         - Preferred language
-      
+  - v16.5
+    - Support for [React DevTools Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
+      - View rendering performance in a variety of views: flame chart, component chart, ranked chart, etc.
+      - How long a component took to render
+      - How many times a component re-rendered
+      - Trace interactions
+      ![Profiler interactions](images/profiler_interactions.gif)
   - v16.6
     - Suspense for code splitting
     ```js
@@ -103,11 +110,35 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
     ```
   - Coming soon:
     - React Hooks (~Q1 2019)
+      - Allows you to write `function` components with local state and lifecycle hooks
+      ```javascript
+      import { useState, useEffect } from 'react';
+
+      function Example() {
+        // create state variable and setter fn
+        const [count, setCount] = useState(0);
+
+        // Similar to componentDidMount and componentDidUpdate:
+        useEffect(() => {
+          // Update the document title using the browser API
+          document.title = `You clicked ${count} times`;
+        }, [count]);
+
+        return (
+          <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+              Click me
+            </button>
+          </div>
+        );
+      }
+      ```
     - Concurrent Mode (~Q2 2019)
     - Suspense for Data Fetching (~mid 2019)
 
 ### Vue
-
+ ![Vue logo](images/vue_logo.png)
 - [Vue surpassed React in Github stars](https://hasvuepassedreactyet.surge.sh/)
   - **Vue:** 124k
   - **React:** 119k
@@ -124,7 +155,7 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
 
 
 ### Angular
-
+![Angular logo](images/angular_logo.png)
 - Angular v6
   - New CLI commands
     - `ng update` - recommends dependency updates
@@ -137,7 +168,6 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
     - Smaller, simpler, and faster
     - Tree shaking
   - Mostly bugfixes
-## Browser Updates and New Features
 
 ## Redux
 
@@ -227,3 +257,23 @@ This package.json tells TypeScript to check whether the current version of TypeS
 ### Performance improvements
 
 On a project we were working on this year, we were running into some big compile performance issues related to using React Material UI and interaction with TypeScript.  There were some changes to TypeScript that came out of this that improved performance.  Here is the [Issue](https://github.com/Microsoft/TypeScript/issues/25085) that explains it the best.
+
+## Javascript
+![Javascript logo](images/javascript_logo.png)
+
+### Features
+- object rest/spread properties
+  - Rest
+  ```javascript
+  let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+  x; // 1
+  y; // 2
+  z; // { a: 3, b: 4 }
+  ```
+  - Spread
+  ```javascript
+  let n = { x, y, ...z };
+  n; // { x: 1, y: 2, a: 3, b: 4 }
+  ```
+- asynchronous iteration
+- `Promise.finally`
