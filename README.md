@@ -48,3 +48,81 @@ VS Code somehow the most popular editor now
 ![Stack Overflow 2018 editor](images/stack-overflow-2018-editor.png)
 
 Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools)
+
+
+
+## Framework Updates and New Features
+
+### React
+
+- React v16
+  - v16.0
+    - Return array of elements and strings from `render` method
+    - Fragments
+    ```js
+    return (
+      <>
+        <Child0 />
+        <Child1 />
+        <Child2 />
+      </>
+    )
+    // Or
+    
+    return (
+      <React.Fragment>
+        <Child0 />
+        <Child1 />
+        <Child2 />
+      </React.Fragment>
+    )
+    ```
+    
+  - v16.3
+    - Context API
+      - Pass data to deeply nested components without passing props all the way down
+      - Use cases:
+        - Authenticated users
+        - Themes
+        - Preferred language
+      
+  - v16.6
+    - Suspense for code splitting
+    ```js
+    // This component is loaded dynamically
+    const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+    function MyComponent() {
+      return (
+        <React.Suspense fallback={<Spinner />}>
+          <div>
+            <OtherComponent />
+          </div>
+        </React.Suspense>
+      );
+    }
+    ```
+  - Coming soon:
+    - React Hooks (~Q1 2019)
+    - Concurrent Mode (~Q2 2019)
+    - Suspense for Data Fetching (~mid 2019)
+
+### Vue
+
+- [Vue surpassed React in Github stars](https://hasvuepassedreactyet.surge.sh/)
+  - **Vue:** 124k
+  - **React:** 119k
+- Vue CLI 3.0 released in August ([release announcement](https://medium.com/the-vue-point/vue-cli-3-0-is-here-c42bebe28fbb]))
+- Vue 3.0 announced
+  - [Roadmap](https://github.com/vuejs/vue/projects/6)
+  - Planned release: End of Q2 2019
+  - Features
+    - Added TSX for improved Typescript support
+    - Speed, size, and memory improvements
+    - IE 11 compatability
+
+### Angular
+
+- Angular Elements
+
+## Browser Updates and New Features
