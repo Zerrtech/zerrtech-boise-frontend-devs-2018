@@ -50,6 +50,125 @@ VS Code somehow the most popular editor now
 Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools)
 
 
+## Framework Updates and New Features
+
+### React
+![React logo](images/react_logo.png)
+
+- React v16
+  - v16.0
+    - Return array of elements and strings from `render` method
+    - Fragments
+    ```js
+    return (
+      <>
+        <Child0 />
+        <Child1 />
+        <Child2 />
+      </>
+    )
+    // Or
+    
+    return (
+      <React.Fragment>
+        <Child0 />
+        <Child1 />
+        <Child2 />
+      </React.Fragment>
+    )
+    ```
+    
+  - v16.3
+    - Context API
+      - Pass data to deeply nested components without passing props all the way down
+      - Use cases:
+        - Authenticated users
+        - Themes
+        - Preferred language
+  - v16.5
+    - Support for [React DevTools Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
+      - View rendering performance in a variety of views: flame chart, component chart, ranked chart, etc.
+      - How long a component took to render
+      - How many times a component re-rendered
+      - Trace interactions
+      ![Profiler interactions](images/profiler_interactions.gif)
+  - v16.6
+    - Suspense for code splitting
+    ```js
+    // This component is loaded dynamically
+    const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+    function MyComponent() {
+      return (
+        <React.Suspense fallback={<Spinner />}>
+          <div>
+            <OtherComponent />
+          </div>
+        </React.Suspense>
+      );
+    }
+    ```
+  - Coming soon:
+    - React Hooks (~Q1 2019)
+      - Allows you to write `function` components with local state and lifecycle hooks
+      ```javascript
+      import { useState, useEffect } from 'react';
+
+      function Example() {
+        // create state variable and setter fn
+        const [count, setCount] = useState(0);
+
+        // Similar to componentDidMount and componentDidUpdate:
+        useEffect(() => {
+          // Update the document title using the browser API
+          document.title = `You clicked ${count} times`;
+        }, [count]);
+
+        return (
+          <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+              Click me
+            </button>
+          </div>
+        );
+      }
+      ```
+    - Concurrent Mode (~Q2 2019)
+    - Suspense for Data Fetching (~mid 2019)
+
+### Vue
+ ![Vue logo](images/vue_logo.png)
+- [Vue surpassed React in Github stars](https://hasvuepassedreactyet.surge.sh/)
+  - **Vue:** 124k
+  - **React:** 119k
+- Vue CLI 3.0 released in August ([release announcement](https://medium.com/the-vue-point/vue-cli-3-0-is-here-c42bebe28fbb]))
+- Vue 3.0 announced
+  - [Roadmap](https://github.com/vuejs/vue/projects/6)
+  - Planned release: End of Q2 2019
+  - Features
+    - Compiler rewrite
+    - Added TSX for improved Typescript support
+    - Speed, size, and memory improvements
+    - Experimental Hooks API
+    - Easier debugging with improved warnings and easier to trace re-renders
+
+
+### Angular
+![Angular logo](images/angular_logo.png)
+- Angular v6
+  - New CLI commands
+    - `ng update` - recommends dependency updates
+    - `ng add` - adds new capabilites to you app like PWA or Angular Elements
+  - Angular Elements
+    - Register Angular components as [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
+  - A lot of new Angular Material components
+- Angular v7
+  - Still no [Ivy Compiler](https://blog.angularindepth.com/inside-ivy-exploring-the-new-angular-compiler-ebf85141cee1)
+    - Smaller, simpler, and faster
+    - Tree shaking
+  - Mostly bugfixes
+
 ## Redux
 
 ![Redux logo](images/redux-logo-title-dark.png)
@@ -155,3 +274,65 @@ Some post 0.56 changes to note [Full Changelog](https://github.com/react-native-
 * React up to 16.6.3 as of 0.57.8
 
 Source: [React Native blog "Releasing 0.56"](https://facebook.github.io/react-native/blog/2018/07/04/releasing-react-native-056)
+
+## Javascript & Browser Features
+![Javascript logo](images/javascript_logo.png)
+
+Sources:
+[Kaelan Cooter](https://blog.logrocket.com/a-comprehensive-look-back-at-frontend-in-2018-8122e724a802)
+### ECMAScript 2018
+- object rest/spread properties
+  - Rest
+  ```javascript
+  let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+  x; // 1
+  y; // 2
+  z; // { a: 3, b: 4 }
+  ```
+  - Spread
+  ```javascript
+  let n = { x, y, ...z };
+  n; // { x: 1, y: 2, a: 3, b: 4 }
+  ```
+- asynchronous iteration
+```javascript
+for await (const line of readLines(filePath)) {
+  console.log(line);
+}
+```
+- `Promise.finally`
+### Browser Features
+- OffscreenCanvasAPI
+  - Chrome and Firefox (with flag)
+  - Send canvas rendering to a web worker
+- Web Animations API
+  - Chrome, Firefox, and polyfill
+  - Similar to jQuery's `.animate()` but built into the browser
+  ```javascript
+  var options = {
+    iterations: Infinity,
+    iterationStart: 0,
+    delay: 0,
+    endDelay: 0,
+    direction: 'alternate',
+    duration: 700,
+    fill: 'forwards',
+    easing: 'ease-out',
+  }
+  var keyframes = [
+    { opacity: 0 },
+    { opacity: 1 }
+  ];
+
+  var element = document.querySelector('.animate-me');
+  element.animate(keyframes, options);
+  ```
+- WebAssembly adoption has been slow
+  - Binary instruction format with near-native performance. Use any language with a Web Assembly target
+  - A good option for data-heavy applications
+    - Image/video editing
+    - Video games
+    - VR
+    - Encryption
+  - C++, Rust, and Typescript are popular choices
+
