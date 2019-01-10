@@ -138,3 +138,20 @@ This package.json tells TypeScript to check whether the current version of TypeS
 ### Performance improvements
 
 On a project we were working on this year, we were running into some big compile performance issues related to using React Material UI and interaction with TypeScript.  There were some changes to TypeScript that came out of this that improved performance.  Here is the [Issue](https://github.com/Microsoft/TypeScript/issues/25085) that explains it the best.
+
+## React Native
+
+There are quite a few big things in the works for React Native [for the future](https://facebook.github.io/react-native/blog/2018/06/14/state-of-react-native-2018), but as far as what happened in 2018, mainly one big release 0.56 in July.
+
+* Upgraded to Babel 7
+* Updated to Android latest versions, resulting in faster builds and new Play Store reqs.
+* Node 8 is now standard, along with React 16.4.
+* Dropped iOS 8 support.
+* Added lots of flow types
+
+Some post 0.56 changes to note [Full Changelog](https://github.com/react-native-community/react-native-releases/blob/master/CHANGELOG.md):
+* Switched from using UIWebView to the newer MKWebView within the WebView component, and is pulled out into it's own separate repo now.
+* Accessibility API improvements
+* React up to 16.6.3 as of 0.57.8
+
+Source: [React Native blog "Releasing 0.56"](https://facebook.github.io/react-native/blog/2018/07/04/releasing-react-native-056)
