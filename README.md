@@ -48,3 +48,6 @@ VS Code somehow the most popular editor now
 ![Stack Overflow 2018 editor](images/stack-overflow-2018-editor.png)
 
 Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools)
+
+
+## Typescript
