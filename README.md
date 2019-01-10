@@ -117,12 +117,27 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
   - [Roadmap](https://github.com/vuejs/vue/projects/6)
   - Planned release: End of Q2 2019
   - Features
+    - Compiler rewrite
     - Added TSX for improved Typescript support
     - Speed, size, and memory improvements
-    - IE 11 compatability
+    - Experimental Hooks API
+    - Easier debugging with improved warnings and easier to trace re-renders
+
 
 ### Angular
 
-- Angular Elements
-
+- Angular v6
+  - New CLI commands
+    - `ng update` - recommends dependency updates
+    - `ng add` - adds new capabilites to you app like PWA or Angular Elements
+  - Angular Elements
+    - Register Angular components as [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
+  - A lot of new Angular Material components
+- Angular v7
+  - Still no [Ivy Compiler](https://blog.angularindepth.com/inside-ivy-exploring-the-new-angular-compiler-ebf85141cee1)
+    - Smaller, simpler, and faster
+    - Tree shaking
+  - Mostly bugfixes
 ## Browser Updates and New Features
+
+
