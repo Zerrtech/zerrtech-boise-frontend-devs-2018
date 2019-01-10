@@ -56,7 +56,7 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
 ![React logo](images/react_logo.png)
 
 - React v16
-  - v16.0
+  - [v16.0](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
     - Return array of elements and strings from `render` method
     - Fragments
     ```js
@@ -78,21 +78,33 @@ Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](h
     )
     ```
     
-  - v16.3
+  - [v16.3](https://reactjs.org/blog/2018/03/29/react-v-16-3.html)
     - Context API
       - Pass data to deeply nested components without passing props all the way down
       - Use cases:
         - Authenticated users
         - Themes
         - Preferred language
-  - v16.5
+  - [v16.4](https://reactjs.org/blog/2018/05/23/react-v-16-4.html)
+    - Pointer events
+      - `onPointerDown`
+      - `onPointerMove`
+      - `onPointerUp`
+      - `onPointerCancel`
+      - `onGotPointerCapture`
+      - `onLostPointerCapture`
+      - `onPointerEnter`
+      - `onPointerLeave`
+      - `onPointerOver`
+      - `onPointerOut`
+  - [v16.5](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
     - Support for [React DevTools Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
       - View rendering performance in a variety of views: flame chart, component chart, ranked chart, etc.
       - How long a component took to render
       - How many times a component re-rendered
       - Trace interactions
       ![Profiler interactions](images/profiler_interactions.gif)
-  - v16.6
+  - [v16.6](https://reactjs.org/blog/2018/10/23/react-v-16-6.html)
     - Suspense for code splitting
     ```js
     // This component is loaded dynamically
@@ -308,7 +320,7 @@ for await (const line of readLines(filePath)) {
 - OffscreenCanvasAPI
   - Chrome and Firefox (with flag)
   - Send canvas rendering to a web worker
-- Web Animations API
+- [Web Animations API](https://css-tricks.com/css-animations-vs-web-animations-api/)
   - Chrome, Firefox, and polyfill
   - Similar to jQuery's `.animate()` but built into the browser
   ```javascript
