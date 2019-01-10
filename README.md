@@ -50,6 +50,14 @@ VS Code somehow the most popular editor now
 Source: [Stack Overflow 2018 Developer Survey - Most Popular Dev Environments](https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-tools)
 
 
+## Redux
+
+Only one major release this year, version 4 in April.  I'll highlight 3 things, although there are a [lot more](https://medium.com/@vyakymenko/whats-new-in-redux-4-major-breaking-changes-4f22a25da921)
+* Updated TypeScript bindings
+* Dropped support for IE < 11
+* Dropped lodash dependency, so Redux became smaller by about 15% minified
+
+
 ## Typescript
 
 Lots of changes in TypeScript this year.  The year started with 2.7, including TypeScript 3 being released on July 30.  Mainly just want to cover the significant changes in Typescript 3+.  You can follow these yourself on the [What's new in TypeScript page](https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript)
